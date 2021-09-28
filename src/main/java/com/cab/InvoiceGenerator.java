@@ -29,7 +29,12 @@ public class InvoiceGenerator {
 			totalFare += calculateFare(ride.distance,ride.time);
 		}
 		return totalFare;
-		
 	}
 	
+	public Invoice getInvoice(Ride[] rides) {
+		double totalFare = 0;
+		totalFare = calculateMultipleRide(rides);
+		Invoice invoice = new Invoice(rides.length, totalFare);
+		return invoice;
+	}
 }
