@@ -10,4 +10,21 @@ public class Invoice {
 		this.totalFare = totalFare;
 		this.avgFare = this.totalFare / this.noOfRides;
 	}
+	
+	public int getNoOfRides() {
+		return noOfRides;
+	}
+
+	public double getTotalFare() {
+		return totalFare;
+	}
+
+	public double getAvgFare() {
+		return avgFare;
+	}
+
+	@Override
+	public String toString() {
+		return "Invoice [noOfRides=" + noOfRides + ", totalFare=" + totalFare + ", avgFare=" + avgFare + "]";
+	}
 }

@@ -1,5 +1,7 @@
 package com.cab;
 
+import java.util.List;
+
 public class InvoiceGenerator {
 
 	private final double MINIMUM_FARE = 5.0;
@@ -22,7 +24,7 @@ public class InvoiceGenerator {
 	 * @param rides - Array of ride
 	 * @return - returns total fare of all rides
 	 */
-	public double calculateMultipleRide(Ride[] rides) {
+	public double calculateMultipleRide(List<Ride> rides) {
 		double totalFare = 0;
 		
 		for(Ride ride: rides) {
@@ -31,10 +33,12 @@ public class InvoiceGenerator {
 		return totalFare;
 	}
 	
-	public Invoice getInvoice(Ride[] rides) {
+	public Invoice getInvoice(List<Ride> rides) {
 		double totalFare = 0;
 		totalFare = calculateMultipleRide(rides);
-		Invoice invoice = new Invoice(rides.length, totalFare);
+		Invoice invoice = new Invoice(rides.size(), totalFare);
 		return invoice;
 	}
+	
+	
 }
