@@ -4,11 +4,17 @@ public class Ride {
 	double distance;
 	int time;
 	int id;
+	RideType type;
 	
-	public Ride(int id, double distance, int time){
+	public enum RideType{
+		NORMAL, PREMIUM
+	};
+	
+	public Ride(int id, double distance, int time,RideType type){
 		this.id = id;
 		this.distance = distance;
 		this.time = time;
+		this.type = type;
 	}
 
 	public double getDistance() {
